@@ -1,0 +1,93 @@
+#slidebox {
+	MARGIN: 0px; BACKGROUND: #000; OVERFLOW: hidden
+}
+#slidebox A {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none; TEXT-DECORATION: none
+}
+#slidebox A:hover {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none; TEXT-DECORATION: none
+}
+#slidebox UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+#slidebox LI {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+#slides {
+	FLOAT: left
+}
+.sliderbutton_left {
+	Z-INDEX: 999; POSITION: relative; WIDTH: 70px; FLOAT: left; HEIGHT: 70px; CURSOR: pointer
+}
+.sliderbutton_right {
+	Z-INDEX: 999; POSITION: relative; WIDTH: 70px; FLOAT: left; HEIGHT: 70px; CURSOR: pointer
+}
+.sliderbutton_left:hover {
+	BACKGROUND: url(images/left.png) no-repeat
+}
+.sliderbutton_right:hover {
+	BACKGROUND: url(images/right.png) no-repeat
+}
+#typecho_intro {
+	BACKGROUND: url(images/intro.jpg) #a4b7bb no-repeat
+}
+.guide {
+	POSITION: relative; WIDTH: 227px; DISPLAY: block; BACKGROUND: url(images/tour-btn.gif) no-repeat; HEIGHT: 36px; TOP: 174px; LEFT: 20px
+}
+.guide_txt {
+	POSITION: relative; WIDTH: 300px; COLOR: #fefefe; FONT-SIZE: 14px; TOP: 144px; FONT-WEIGHT: bold; LEFT: 257px
+}
+#img_nav {
+	BACKGROUND: #000; FLOAT: right
+}
+#img_nav LI {
+	BORDER-BOTTOM: #222 1px solid; BORDER-LEFT: #222 1px solid; WIDTH: 100%; FONT: 15px/27px Arial; BACKGROUND: #000; FLOAT: left; COLOR: #777; OVERFLOW: hidden; BORDER-TOP: #222 1px solid; CURSOR: pointer; BORDER-RIGHT: #222 1px solid; opacity: .5
+}
+#img_nav LI:hover {
+	BACKGROUND: #222; COLOR: #ccc; opacity: 1
+}
+#img_nav LI.slidecurrent {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; BACKGROUND: #555; COLOR: #fff; BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; opacity: 1
+}
+#img_nav LI IMG {
+	VERTICAL-ALIGN: middle; MARGIN-RIGHT: 16px
+}
+#wrapper #page #page-bgtop #content .post .entry p {
+	font-size: 14px;
+}
+#wrapper #page #page-bgtop #content .post .entry p strong {
+	font-weight: normal;
+}
+#wrapper #page #page-bgtop #content .post .entry p strong {
+	font-family: "微软雅黑";
+}
+#wrapper #page #page-bgtop #content .post .entry p strong {
+	font-family: "宋体", "华文仿宋", "华文宋体";
+}
+#wrapper #page #page-bgtop #content .post .entry p strong {
+	font-size: 14px;
+}
+#wrapper #page #page-bgtop #content .post .entry p strong {
+	font-size: 9px;
+}
+#wrapper #page #page-bgtop #content .post .entry p strong {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+#wrapper #page #page-bgtop #content .post title {
+	font-family: "微软雅黑";
+	font-size: 24px;
+}
+#wrapper #page #page-bgtop #content .post .entry p strong {
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+#wrapper #header #menu ul li .first strong {
+	font-family: "微软雅黑";
+}
+#wrapper #header #menu ul li a strong {
+	font-family: "微软雅黑";
+
+}
+#wrapper #page #page-bgtopindex #content_index .post .entry table {
+	font-size: 14px;
+}
