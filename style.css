@@ -563,6 +563,406 @@ hr { display: none; }
 	--aecc-soft: #f4f9f9;
 }
 
+/* iOS-style polish layer, 2026-06 */
+:root {
+	--ios-bg: #f5f7fb;
+	--ios-surface: rgba(255, 255, 255, 0.72);
+	--ios-surface-strong: rgba(255, 255, 255, 0.9);
+	--ios-stroke: rgba(255, 255, 255, 0.74);
+	--ios-line: rgba(126, 145, 164, 0.22);
+	--ios-shadow: 0 18px 46px rgba(31, 41, 55, 0.13);
+	--ios-shadow-hover: 0 24px 58px rgba(31, 41, 55, 0.18);
+	--ios-blue: #007aff;
+	--ios-mint: #34c759;
+	--ios-orange: #ff9f0a;
+	--ios-pink: #ff2d55;
+	--ios-purple: #af52de;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background:
+		radial-gradient(circle at 8% 8%, rgba(0, 122, 255, 0.16), transparent 28%),
+		radial-gradient(circle at 88% 10%, rgba(52, 199, 89, 0.13), transparent 26%),
+		radial-gradient(circle at 58% 92%, rgba(255, 159, 10, 0.14), transparent 30%),
+		linear-gradient(180deg, #f8fbff 0%, #eef5fb 48%, #fbfaf5 100%);
+	color: #1d1d1f;
+	-webkit-font-smoothing: antialiased;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.34) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+	background-size: 42px 42px;
+	mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 76%);
+}
+
+@supports ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+	#header,
+	#page,
+	#sidebar > ul,
+	.homepage-hero,
+	.quick-facts div,
+	.direction-card,
+	.highlight-card,
+	.news-item,
+	.application-box,
+	.contact-card,
+	.profile-section,
+	.selected-publications,
+	.recruit-note,
+	.science-visual,
+	.mechanism-image-card,
+	#content_photo .entry > .entry,
+	#content_photo .entry > div.entry {
+		-webkit-backdrop-filter: blur(22px) saturate(1.25);
+		backdrop-filter: blur(22px) saturate(1.25);
+	}
+}
+
+#wrapper {
+	padding-bottom: 24px;
+}
+
+#logo {
+	border-radius: 28px 28px 20px 20px;
+	background:
+		linear-gradient(135deg, rgba(0, 122, 255, 0.88), rgba(52, 199, 89, 0.58) 54%, rgba(255, 159, 10, 0.62)),
+		url(images/img04.jpg) no-repeat right center;
+	box-shadow: 0 26px 70px rgba(0, 72, 138, 0.22);
+	transform: translateZ(0);
+}
+
+#logo::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	background: linear-gradient(120deg, rgba(255, 255, 255, 0.32), transparent 34%, rgba(255, 255, 255, 0.18) 72%, transparent);
+	animation: ios-shimmer 8s ease-in-out infinite;
+}
+
+#logo h1 {
+	text-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+#apDiv2 {
+	border: 1px solid rgba(255, 255, 255, 0.74);
+	box-shadow: 0 18px 42px rgba(0, 42, 92, 0.2);
+	transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+#apDiv2:hover {
+	transform: translateY(-3px) scale(1.03);
+	box-shadow: 0 24px 58px rgba(0, 42, 92, 0.26);
+}
+
+#header {
+	position: sticky;
+	top: 10px;
+	z-index: 20;
+	margin-top: 10px;
+	border: 1px solid var(--ios-stroke);
+	border-radius: 20px;
+	background: var(--ios-surface);
+	box-shadow: var(--ios-shadow);
+}
+
+#menu ul {
+	gap: 8px;
+	padding: 10px 12px;
+	flex-wrap: nowrap;
+}
+
+#menu a {
+	position: relative;
+	overflow: hidden;
+	border-radius: 999px;
+	padding: 8px 12px;
+	color: rgba(29, 29, 31, 0.82);
+	transition: transform 0.22s ease, background-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+}
+
+#menu a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+	transform: translateX(-120%);
+	transition: transform 0.48s ease;
+}
+
+#menu a:hover {
+	transform: translateY(-2px);
+	background: rgba(0, 122, 255, 0.1);
+	color: var(--ios-blue);
+	box-shadow: 0 10px 22px rgba(0, 122, 255, 0.12);
+}
+
+#menu a:hover::after {
+	transform: translateX(120%);
+}
+
+#menu .current_page_item a {
+	background: linear-gradient(135deg, var(--ios-blue), #5ac8fa);
+	color: #ffffff;
+	box-shadow: 0 12px 28px rgba(0, 122, 255, 0.28);
+}
+
+#page {
+	margin-top: 16px;
+	border: 1px solid var(--ios-stroke);
+	border-radius: 28px;
+	background: rgba(255, 255, 255, 0.7);
+	box-shadow: var(--ios-shadow);
+	overflow: hidden;
+}
+
+#page-bgtop,
+#page-bgtopindex {
+	padding: 30px 30px 6px;
+}
+
+.post {
+	border-bottom-color: var(--ios-line);
+}
+
+.post .title {
+	border-left: 0;
+	padding-left: 0;
+	color: #1d1d1f;
+}
+
+.post .title::after,
+.post .entry h2::after {
+	content: "";
+	display: block;
+	width: 58px;
+	height: 4px;
+	margin-top: 10px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, var(--ios-blue), var(--ios-mint), var(--ios-orange));
+}
+
+.post .entry h2,
+.post .entry .yy1 {
+	color: #005ecb !important;
+}
+
+#slidebox,
+.homepage-hero,
+.quick-facts div,
+.direction-card,
+.highlight-card,
+.news-item,
+.application-box,
+.contact-card,
+.profile-section,
+.selected-publications,
+.recruit-note,
+.science-visual,
+.mechanism-image-card,
+#sidebar > ul,
+#content_photo .entry > .entry,
+#content_photo .entry > div.entry {
+	border: 1px solid var(--ios-stroke);
+	border-radius: 20px;
+	background: var(--ios-surface-strong);
+	box-shadow: 0 12px 32px rgba(31, 41, 55, 0.09);
+	transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.homepage-hero,
+.section-lead,
+.recruit-note,
+.selected-publications {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(245, 249, 255, 0.74)),
+		linear-gradient(120deg, rgba(0, 122, 255, 0.12), rgba(52, 199, 89, 0.1), rgba(255, 159, 10, 0.1));
+}
+
+.homepage-hero {
+	position: relative;
+	overflow: hidden;
+	border-left: 1px solid var(--ios-stroke);
+}
+
+.homepage-hero::before {
+	content: "";
+	position: absolute;
+	right: -82px;
+	top: -82px;
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	background: conic-gradient(from 180deg, rgba(0, 122, 255, 0.14), rgba(52, 199, 89, 0.14), rgba(255, 159, 10, 0.16), rgba(0, 122, 255, 0.14));
+	animation: ios-spin 14s linear infinite;
+}
+
+.homepage-hero > * {
+	position: relative;
+	z-index: 1;
+}
+
+.homepage-hero h2 {
+	color: #111827 !important;
+}
+
+.homepage-hero .hero-kicker,
+.quick-facts strong,
+.direction-card strong,
+.highlight-card strong,
+.news-item span {
+	color: var(--ios-blue);
+}
+
+.hero-actions a {
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--ios-blue), #5ac8fa);
+	box-shadow: 0 12px 28px rgba(0, 122, 255, 0.24);
+	transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
+}
+
+.hero-actions a:hover {
+	transform: translateY(-2px);
+	background: linear-gradient(135deg, var(--ios-blue), #5ac8fa);
+	box-shadow: 0 18px 36px rgba(0, 122, 255, 0.32);
+	filter: saturate(1.08);
+}
+
+.quick-facts div:hover,
+.direction-card:hover,
+.highlight-card:hover,
+.news-item:hover,
+.application-box:hover,
+.contact-card:hover,
+.science-visual:hover,
+.mechanism-image-card:hover {
+	transform: translateY(-5px);
+	border-color: rgba(0, 122, 255, 0.24);
+	box-shadow: var(--ios-shadow-hover);
+}
+
+.quick-facts div:nth-child(2) strong,
+.direction-card:nth-child(2) strong,
+.highlight-card:nth-child(2) strong {
+	color: var(--ios-mint);
+}
+
+.quick-facts div:nth-child(3) strong,
+.direction-card:nth-child(3) strong,
+.highlight-card:nth-child(3) strong {
+	color: var(--ios-orange);
+}
+
+.news-item {
+	position: relative;
+	padding-left: 18px;
+}
+
+.news-item::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 18px;
+	bottom: 18px;
+	width: 4px;
+	border-radius: 999px;
+	background: linear-gradient(180deg, var(--ios-blue), var(--ios-mint));
+}
+
+.news-item span {
+	background: rgba(0, 122, 255, 0.1);
+}
+
+.featured-list li,
+.post .entry li {
+	transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.featured-list li:hover,
+.post .entry li:hover {
+	transform: translateX(3px);
+	color: #111827;
+}
+
+.science-visual::before {
+	background: radial-gradient(circle, rgba(0, 122, 255, 0.16), rgba(0, 122, 255, 0));
+}
+
+.project-step,
+.training-node,
+.visual-node,
+.orbit-dot,
+.pub-core,
+.pub-ring,
+.keyword-cloud .kw {
+	border-radius: 18px;
+	border-color: var(--ios-stroke);
+	background: rgba(255, 255, 255, 0.86);
+	box-shadow: 0 12px 30px rgba(31, 41, 55, 0.1);
+}
+
+.project-step,
+.training-node {
+	color: var(--ios-blue);
+}
+
+#sidebar > ul {
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 249, 255, 0.76)),
+		linear-gradient(135deg, rgba(0, 122, 255, 0.08), rgba(52, 199, 89, 0.08));
+}
+
+#sidebar textarea {
+	border-color: var(--ios-line);
+	border-radius: 16px;
+	background: rgba(255, 255, 255, 0.78);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+#footer-bgcontent {
+	background:
+		linear-gradient(135deg, rgba(17, 24, 39, 0.94), rgba(0, 80, 154, 0.86)),
+		linear-gradient(90deg, var(--ios-blue), var(--ios-mint));
+}
+
+a:focus-visible,
+#menu a:focus-visible,
+.hero-actions a:focus-visible {
+	outline: 3px solid rgba(0, 122, 255, 0.34);
+	outline-offset: 3px;
+}
+
+@keyframes ios-shimmer {
+	0%, 100% { opacity: 0.42; transform: translateX(-4%); }
+	50% { opacity: 0.78; transform: translateX(4%); }
+}
+
+@keyframes ios-spin {
+	to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.001ms !important;
+	}
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -1936,6 +2336,17 @@ img {
 }
 
 @media (max-width: 980px) {
+	#menu ul {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 8px;
+	}
+
+	#menu a {
+		justify-content: center;
+		text-align: center;
+	}
+
 	#logo,
 	#header,
 	#page,
@@ -2045,4 +2456,70 @@ img {
 	.pulse-line {
 		display: none;
 	}
+}
+
+@media (max-width: 560px) {
+	#menu ul {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+/* Performance pass: keep the iOS look without forcing Chrome to repaint many blurred layers while scrolling. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+	.quick-facts div,
+	.direction-card,
+	.highlight-card,
+	.news-item,
+	.application-box,
+	.contact-card,
+	.profile-section,
+	.selected-publications,
+	.recruit-note,
+	.science-visual,
+	.mechanism-image-card,
+	#content_photo .entry > .entry,
+	#content_photo .entry > div.entry {
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+	}
+
+	#header,
+	#page,
+	#sidebar > ul,
+	.homepage-hero {
+		-webkit-backdrop-filter: blur(14px) saturate(1.12);
+		backdrop-filter: blur(14px) saturate(1.12);
+	}
+}
+
+.quick-facts div,
+.direction-card,
+.highlight-card,
+.news-item,
+.application-box,
+.contact-card,
+.profile-section,
+.selected-publications,
+.recruit-note,
+.science-visual,
+.mechanism-image-card,
+#content_photo .entry > .entry,
+#content_photo .entry > div.entry {
+	background: rgba(255, 255, 255, 0.92);
+	box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08);
+}
+
+.post,
+.news-list,
+.highlight-grid,
+.direction-grid,
+.quick-facts,
+.featured-list {
+	content-visibility: auto;
+	contain-intrinsic-size: 1px 420px;
+}
+
+body::before {
+	position: absolute;
+	min-height: 120vh;
 }
